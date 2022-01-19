@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Killian/Projects/SQL/Day_1.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1576"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainProducts"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Manufacturers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="62"/><column index="2" value="154"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Products" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="4" mode="0"/></sort><column_widths><column index="1" value="62"/><column index="2" value="144"/><column index="3" value="63"/><column index="4" value="178"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">-- 1.1 Select the names of all the products in the store.
+SELECT Name
+FROM Products;
+
+-- 1.2 Select the names and the prices of all the products in the store.
+SELECT Name, Price
+FROM Products;
+
+-- 1.3 Select the name of the products with a price less than or equal to $200.
+SELECT Name, Price
+FROM Products
+WHERE Price &lt;= 200;
+
+-- 1.4 Select all the products with a price between $60 and $120.
+SELECT Name, Price
+FROM Products
+WHERE Price BETWEEN 60 AND 120;
+
+-- 1.5 Select the name and price in cents (i.e., the price must be multiplied by 100).
+SELECT Name, Price*100 AS Price_cents
+FROM Products;
+
+
+-- 1.6 Compute the average price of all the products.
+SELECT AVG(Price)
+FROM Products;
+
+-- 1.7 Compute the average price of all products with manufacturer code equal to 2.
+SELECT AVG(Price) as avg_price
+FROM Products
+WHERE Manufacturer =2;
+
+-- 1.8 Compute the number of products with a price larger than or equal to $180.
+SELECT COUNT(Price)
+FROM Products
+WHERE Price &gt;=180;
+
+-- 1.9 Select the name and price of all products with a price larger than or equal to $180, 
+-- and sort first by price (in descending order), and then by name (in ascending order).
+SELECT Name, Price
+FROM Products
+WHERE Price &gt;=180
+ORDER BY Price DESC, Name;
+
+-- 1.10 Select all the data from the products, including all the data for each product's manufacturer.
+SELECT *
+FROM Products
+JOIN Manufacturers
+ON Products.Manufacturer = Manufacturers.Code;
+
+-- 1.11 Select the product name, price, and manufacturer name of all the products.
+SELECT Products.Name, Price, Manufacturer
+FROM Products
+JOIN Manufacturers
+ON Products.Manufacturer = Manufacturers.Code;
+
+-- 1.12 Select the average price of each manufacturer's products, showing only the manufacturer's code.
+SELECT AVG(Price) as avg_price, Manufacturer
+FROM Products
+GROUP BY Manufacturer;
+
+-- 1.13 Select the average price of each manufacturer's products, showing the manufacturer's name.
+SELECT AVG(Price) as avg_price, Manufacturers.Name
+FROM Products
+JOIN Manufacturers
+ON Products.Manufacturer = Manufacturers.Code
+GROUP BY Manufacturers.Name;
+
+-- 1.14 Select the names of manufacturer whose products have an average price larger than or equal to $150.
+SELECT AVG(Price) as avg_price, Manufacturers.Name
+FROM Products
+JOIN Manufacturers
+ON Products.Manufacturer = Manufacturers.Code
+GROUP BY Manufacturers.Name
+HAVING AVG(Price) &gt;=150;
+-- Where clause works with select clause but won’t work on the group by or aggregate function condition.
+-- Having clause works with a group by clause but specifically works on aggregate function condition.
+
+-- 1.15 Select the name and price of the cheapest product.
+SELECT MIN(Price) as min_price, Name
+FROM Products
+
+-- 1.16 Select the name of each manufacturer along with the name and price of its most expensive product.
+SELECT Products.Name, MAX(Price) as max_price, Manufacturers.Name
+FROM Products
+JOIN Manufacturers
+ON Products.Manufacturer = Manufacturers.Code
+GROUP BY Manufacturers.Name
+
+-- 1.17 Add a new product: Loudspeakers, $70, manufacturer 2.
+INSERT INTO Products VALUES(11, 'Loudspeakers',70,2);
+
+SELECT *
+FROM Products;
+
+-- 1.18 Update the name of product 8 to &quot;Laser Printer&quot;.
+UPDATE Products
+SET Name = 'Laser Printer'
+WHERE Code = 8;
+
+SELECT *
+FROM Products;
+
+-- 1.19 Apply a 10% discount to all products.
+ALTER TABLE Products ADD COLUMN Discount_Price INTEGER;
+UPDATE Products
+SET Discount_Price=Price*0.9;
+
+SELECT *
+FROM Products;
+
+-- 1.20 Apply a 10% discount to all products with a price larger than or equal to $120.
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
