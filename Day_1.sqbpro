@@ -102,7 +102,7 @@ SELECT *
 FROM Products;
 
 -- 1.19 Apply a 10% discount to all products.
-ALTER TABLE Products ADD COLUMN Discount_Price INTEGER;
+ALTER TABLE Products ADD COLUMN Discount_Price INTEGER; -- CANNOT ADD INTEGER NOT NULL
 UPDATE Products
 SET Discount_Price=Price*0.9;
 
