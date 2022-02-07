@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Killian/Projects/SQL/Day_10.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1311"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,7:mainADDRESS"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ADDRESS" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="44"/><column index="2" value="76"/><column index="3" value="88"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="PEOPLE" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">--Questions
+
+-- 10.1 Join table PEOPLE and ADDRESS, but keep only one address information for each person (we don't mind which record we take for each person). 
+    -- i.e., the joined table should have the same number of rows as table PEOPLE
+
+SELECT  PEOPLE.*, FIRST_VALUE(PEOPLE.ID) OVER (
+        PARTITION BY PEOPLE.ID
+        ORDER BY PEOPLE.ID DESC
+    ) AS SingleID
+FROM PEOPLE
+LEFT JOIN ADDRESS
+ON PEOPLE.ID = ADDRESS.ID;
+
+SELECT
+    AlbumId,
+    Name,
+    printf('%,d',Bytes) Size,
+    FIRST_VALUE(Name) OVER (
+        PARTITION BY AlbumId
+        ORDER BY Bytes DESC
+    ) AS LargestTrack
+
+
+SELECT PEOPLE.*, ADDRESS.*
+FROM PEOPLE, ADDRESS
+INNER JOIN 
+(SELECT *
+FROM PEOPLE
+ORDER BY ID
+LIMIT 1) 
+alias ON ADDRESS.ID=alias.ID
+
+select *, row_number() over (partition by lower(id) order by id) as rn 
+  from people 
+
+select PEOPLE.*, ADDRESS.*
+from (
+  select *, row_number() over (partition by lower(id) order by id) as rn 
+  from people 
+) t
+where rn = 1;
+	
+-- 10.2 Join table PEOPLE and ADDRESS, but ONLY keep the LATEST address information for each person. 
+    -- i.e., the joined table should have the same number of rows as table PEOPLE
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
