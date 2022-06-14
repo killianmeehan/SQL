@@ -1,64 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Killian/Projects/SQL/Day_9.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1151"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:maincran_logs"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="cran_logs" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="6" mode="1"/></sort><column_widths><column index="1" value="112"/><column index="2" value="59"/><column index="3" value="63"/><column index="4" value="74"/><column index="5" value="55"/><column index="6" value="82"/><column index="7" value="139"/><column index="8" value="93"/><column index="9" value="63"/><column index="10" value="44"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">UPDATE cran_logs
-SET ip_id=REPLACE(ip_id,'&quot;','') WHERE ip_id LIKE '%&quot;';
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Killian/Projects/SQL/Day_9.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1311"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:maincran_logs"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ADDRESS" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="112"/><column index="3" value="128"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Affiliated_With" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="108"/><column index="2" value="133"/><column index="3" value="191"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Appointment" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="7" mode="0"/></sort><column_widths><column index="1" value="110"/><column index="2" value="70"/><column index="3" value="79"/><column index="4" value="72"/><column index="5" value="110"/><column index="6" value="110"/><column index="7" value="125"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Block" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="44"/><column index="2" value="44"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Department" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="104"/><column index="2" value="105"/><column index="3" value="45"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Departments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="44"/><column index="2" value="110"/><column index="3" value="58"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employees" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="4" mode="0"/></sort><column_widths><column index="1" value="70"/><column index="2" value="69"/><column index="3" value="75"/><column index="4" value="109"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Manufacturers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="62"/><column index="2" value="154"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Medication" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="44"/><column index="2" value="77"/><column index="3" value="137"/><column index="4" value="85"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Nurse" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="87"/><column index="2" value="100"/><column index="3" value="63"/><column index="4" value="83"/><column index="5" value="44"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="On_Call" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="49"/><column index="2" value="76"/><column index="3" value="77"/><column index="4" value="110"/><column index="5" value="110"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="PEOPLE" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Patient" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="70"/><column index="2" value="110"/><column index="3" value="126"/><column index="4" value="61"/><column index="5" value="91"/><column index="6" value="44"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Physician" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="87"/><column index="2" value="111"/><column index="3" value="167"/><column index="4" value="70"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Prescribes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="72"/><column index="2" value="70"/><column index="3" value="82"/><column index="4" value="110"/><column index="5" value="96"/><column index="6" value="44"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Procedure" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="44"/><column index="2" value="190"/><column index="3" value="53"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Products" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="4" mode="0"/></sort><column_widths><column index="1" value="62"/><column index="2" value="144"/><column index="3" value="63"/><column index="4" value="178"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Room" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="44"/><column index="3" value="76"/><column index="4" value="77"/><column index="5" value="85"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Stay" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="56"/><column index="2" value="70"/><column index="3" value="48"/><column index="4" value="73"/><column index="5" value="73"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Trained_In" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="72"/><column index="2" value="80"/><column index="3" value="122"/><column index="4" value="137"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Undergoes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="70"/><column index="2" value="79"/><column index="3" value="44"/><column index="4" value="73"/><column index="5" value="72"/><column index="6" value="108"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="cran_logs" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="6" mode="1"/></sort><column_widths><column index="1" value="112"/><column index="2" value="59"/><column index="3" value="63"/><column index="4" value="74"/><column index="5" value="55"/><column index="6" value="82"/><column index="7" value="139"/><column index="8" value="93"/><column index="9" value="63"/><column index="10" value="44"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">UPDATE cran_logs
+SET ip_id=REPLACE(ip_id,'&quot;','') WHERE ip_id LIKE '%&quot;';
+
+UPDATE cran_logs
+SET download_date=REPLACE(download_date,'&quot;','') WHERE download_date LIKE '&quot;%';
+
+-- 9.1 Give the package name and how many times they're downloaded. Order by the 2nd column descently.
+SELECT package, COUNT(package) AS 'Times downloaded'
+FROM cran_logs
+GROUP BY package
+ORDER BY COUNT(download_date) DESC;
+
+-- 9.2 Give the package ranking (based on how many times it was downloaded) during 9AM to 11AM
+SELECT package, COUNT(time) AS 'Times downloaded'
+FROM cran_logs
+WHERE time BETWEEN '09:00:00' AND '11:00:00'
+GROUP BY package
+ORDER BY COUNT(download_date) DESC
+--times stated in 'between' clause are included in the result
+
+-- 9.3 How many recordings are from China (&quot;CN&quot;) or Japan(&quot;JP&quot;) or Singapore (&quot;SG&quot;)?
+SELECT country, COUNT(country) AS 'Times downloaded'
+FROM cran_logs
+WHERE country = 'CN' OR country = 'JP' OR country = 'SG'
+GROUP BY country
+
+-- 9.4 Print the countries whose downloaded are more than the downloads from China (&quot;CN&quot;)
+SELECT country, COUNT(country) AS 'Times downloaded'
+FROM cran_logs
+GROUP BY country
+HAVING COUNT(country) &gt; (SELECT COUNT(country)
+FROM cran_logs
+WHERE country = 'CN');
+
+-- 9.5 Print the average length of the package name of all the UNIQUE packages
+WITH lonelies AS (SELECT package
+FROM cran_logs
+GROUP BY package
+HAVING COUNT(package) = 1)
+
+SELECT ROUND(AVG(LENGTH(package)), 2) AS 'Average # of characters in unique packages'
+FROM lonelies
+
+-- 9.6 Get the package whose download count ranks 2nd (print package name and it's download count).
+
+SELECT package, COUNT(package) AS 'Times downloaded'
+FROM cran_logs
+GROUP BY package
+ORDER BY COUNT(package) DESC
+LIMIT 1 OFFSET 1;
+
+-- 9.7 Print the name of the package whose download count is bigger than 1000.
+SELECT package, COUNT(package) AS 'Times downloaded'
+FROM cran_logs
+GROUP BY package
+HAVING COUNT(package) &gt; 1000
+ORDER BY COUNT(package) DESC;
+
+-- 9.8 The field &quot;r_os&quot; is the operating system of the users.
+-- 	Here we would like to know what main system we have (ignore version number), the relevant counts, and the proportion (in percentage).
+
+WITH base_os AS 
+(SELECT regexp_replace(r_os, '[.0-9]+', '') FROM cran_logs)
+
+SELECT base_os, COUNT(base_os) AS 'Count', ROUND((COUNT(base_os) * 100.0 / (SELECT COUNT(base_os) FROM cran_logs)),2) AS 'percentage'
+FROM cran_logs
+GROUP BY base_os
+ORDER BY COUNT(r_os) DESC;
 
-UPDATE cran_logs
-SET download_date=REPLACE(download_date,'&quot;','') WHERE download_date LIKE '&quot;%';
 
--- 9.1 Give the package name and how many times they're downloaded. Order by the 2nd column descently.
-SELECT package, COUNT(package) AS 'Times downloaded'
-FROM cran_logs
-GROUP BY package
-ORDER BY COUNT(download_date) DESC;
+WITH low_budget AS 
+(SELECT * 
+FROM Departments 
+ORDER BY Budget 
+LIMIT 2)
 
--- 9.2 Give the package ranking (based on how many times it was downloaded) during 9AM to 11AM
-SELECT package, COUNT(time) AS 'Times downloaded'
-FROM cran_logs
-WHERE time BETWEEN '09:00:00' AND '11:00:00'
-GROUP BY package
-ORDER BY COUNT(download_date) DESC
---times stated in 'between' clause are included in the result
-
--- 9.3 How many recordings are from China (&quot;CN&quot;) or Japan(&quot;JP&quot;) or Singapore (&quot;SG&quot;)?
-SELECT country, COUNT(country) AS 'Times downloaded'
-FROM cran_logs
-WHERE country = 'CN' OR country = 'JP' OR country = 'SG'
-GROUP BY country
-
--- 9.4 Print the countries whose downloaded are more than the downloads from China (&quot;CN&quot;)
-SELECT country, COUNT(country) AS 'Times downloaded'
-FROM cran_logs
-GROUP BY country
-HAVING COUNT(country) &gt; (SELECT COUNT(country)
-FROM cran_logs
-WHERE country = 'CN');
-
--- 9.5 Print the average length of the package name of all the UNIQUE packages
-WITH lonelies AS (SELECT package
-FROM cran_logs
-GROUP BY package
-HAVING COUNT(package) = 1)
-
-SELECT ROUND(AVG(LENGTH(package)), 2) AS 'Average # of characters in unique packages'
-FROM lonelies
-
--- 9.6 Get the package whose download count ranks 2nd (print package name and it's download count).
-
-SELECT package, COUNT(package) AS 'Times downloaded'
-FROM cran_logs
-GROUP BY package
-ORDER BY COUNT(package) DESC
-LIMIT 1 OFFSET 1;
-
--- 9.7 Print the name of the package whose download count is bigger than 1000.
-SELECT package, COUNT(package) AS 'Times downloaded'
-FROM cran_logs
-GROUP BY package
-HAVING COUNT(package) &gt; 1000
-ORDER BY COUNT(package) DESC;
-
--- 9.8 The field &quot;r_os&quot; is the operating system of the users.
--- 	Here we would like to know what main system we have (ignore version number), the relevant counts, and the proportion (in percentage).
-SELECT r_os, COUNT(r_os) AS 'Count', ROUND((COUNT(r_os) * 100.0 / (SELECT COUNT(r_os) FROM cran_logs)),2) AS 'percentage'
-FROM cran_logs
-GROUP BY r_os
-ORDER BY COUNT(r_os) DESC;</sql><current_tab id="0"/></tab_sql></sqlb_project>
+SELECT Employees.Name, Employees.LastName
+FROM Employees
+JOIN low_budget
+ON Employees.Department = Code</sql><current_tab id="0"/></tab_sql></sqlb_project>

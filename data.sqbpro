@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Killian/Projects/SQL/data.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1888"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,10:mainassessment"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="assessment" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="72"/><column index="2" value="61"/><column index="3" value="101"/><column index="4" value="99"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="customers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="196"/><column index="2" value="221"/><column index="3" value="276"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="invoices" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="110"/><column index="2" value="115"/><column index="3" value="148"/><column index="4" value="99"/><column index="5" value="79"/><column index="6" value="111"/><column index="7" value="195"/><column index="8" value="142"/><column index="9" value="133"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="products" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="3" mode="0"/></sort><column_widths><column index="1" value="110"/><column index="2" value="148"/><column index="3" value="1978"/><column index="4" value="101"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stock" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="72"/><column index="2" value="80"/><column index="3" value="99"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">--Question 1: What are the average ratings for each product type?
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Killian/Projects/SQL/data.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1335"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,10:mainassessment"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="assessment" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="110"/><column index="2" value="73"/><column index="3" value="151"/><column index="4" value="148"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="customers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="196"/><column index="2" value="221"/><column index="3" value="276"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="invoices" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="110"/><column index="2" value="115"/><column index="3" value="148"/><column index="4" value="99"/><column index="5" value="79"/><column index="6" value="111"/><column index="7" value="195"/><column index="8" value="142"/><column index="9" value="133"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="products" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="110"/><column index="2" value="148"/><column index="3" value="170"/><column index="4" value="101"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stock" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="72"/><column index="2" value="80"/><column index="3" value="99"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">--Question 1: What are the average ratings for each product type?
 SELECT products.product_type, ROUND(AVG(assessment.rating),2)  AS avg_rating
 FROM products
 JOIN assessment
@@ -8,7 +8,7 @@ GROUP BY products.product_type;
 --Question 2 &amp; 3: What are the top 3 products in each product segment by customer rating?
 --Are they the most reviewed products as well?
 
-Are they the most reviewed products as well?
+--Are they the most reviewed products as well?
 SELECT *
 FROM
 (SELECT products.product_type, products.title, assessment.rating, assessment.review_count,
@@ -108,14 +108,33 @@ FROM invoices
 JOIN customers
 ON customers.index_col=invoices.index_col
 WHERE yr = 2019
-GROUP BY mnth;
+GROUP BY mnth;
+
+--Q8 ALT
+SELECT COUNT(DISTINCT customers.CustomerID) AS num_cust,
+strftime('%m', invoices.invoice_date) as mth, 
+strftime('%Y', invoices.invoice_date) as yr
+FROM invoices
+JOIN customers
+ON customers.index_col=invoices.index_col
+WHERE yr = '2019' -- because it's a fcking string
+GROUP BY mth;
+
+
+
+--Having fun
+SELECT products.product_type, products.title, AVG(assessment.rating), products.ASIN, assessment.ASIN
+FROM products
+JOIN assessment
+ON products.index_col=assessment.index_col
+GROUP BY products.product_type;
+
+
+
+
+ALTER TABLE products ADD COLUMN StockCode TEXT;
+
+UPDATE products
+	SET StockCode = (SELECT StockCode FROM stock WHERE stock.index_col = products.index_col);
 
---Q8 ALT
-SELECT COUNT(DISTINCT customers.CustomerID) AS num_cust,
-strftime('%m', invoices.invoice_date) as mth, 
-strftime('%Y', invoices.invoice_date) as yr
-FROM invoices
-JOIN customers
-ON customers.index_col=invoices.index_col
-WHERE yr = '2019' -- because it's a fcking string
-GROUP BY mth;</sql><current_tab id="0"/></tab_sql></sqlb_project>
+PRAGMA encoding; </sql><current_tab id="0"/></tab_sql></sqlb_project>
